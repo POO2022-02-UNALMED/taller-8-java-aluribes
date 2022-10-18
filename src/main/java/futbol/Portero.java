@@ -5,38 +5,14 @@ public class Portero extends Futbolista {
     public byte dorsal;
 
     // Constructor
-
+    
     public Portero(String nombre, int edad, short golesRecibidos, byte dorsal) {
         super(nombre, edad, "Portero");
         this.golesRecibidos = golesRecibidos;
         this.dorsal = dorsal;
     }
-
-    // Getters y Setters
-
-    public short getGolesRecibidos() {
-        return golesRecibidos;
-    }
-
-    public void setGolesRecibidos(short golesRecibidos) {
-        this.golesRecibidos = golesRecibidos;
-    }
-
-    public byte getDorsal() {
-        return dorsal;
-    }
-
-    public void setDorsal(byte dorsal) {
-        this.dorsal = dorsal;
-    }
-
+    
     // Métodos
-
-    @Override
-    public String toString() {
-        return "El futbolista " + getNombre() + " tiene " + getEdad() + ", y juega de " + getPosicion()+ " con el dorsal "+ dorsal+ ". Le han marcado "+ golesRecibidos ;
-    }
-
 
     @Override
     public boolean jugarConLasManos() {
@@ -47,5 +23,9 @@ public class Portero extends Futbolista {
     public int compareTo(Object obj){
         return Math.abs(this.golesRecibidos-((Portero)obj).golesRecibidos);
     }
-
+    
+    @Override
+    public String toString() {
+        return "El futbolista " + getNombre() + " tiene " + getEdad() + ", y juega de " + getPosicion()+ " con el dorsal "+ dorsal+ ". Le han marcado "+ golesRecibidos ;
+    }
 }

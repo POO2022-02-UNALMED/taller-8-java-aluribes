@@ -6,11 +6,11 @@ public abstract class Futbolista implements Comparable{
     private final String posicion;
 
     // Constructor
-    
+
     public Futbolista() {
         nombre = "Maradona";
-        edad = 30;
         posicion = "delantero";
+        edad = 30;
     }
 
     public Futbolista(String nombre, int edad, String posicion) {
@@ -19,8 +19,20 @@ public abstract class Futbolista implements Comparable{
         this.posicion = posicion;
     }
 
-    // Getters y setters
+    // Métodos
 
+    public abstract boolean jugarConLasManos();
+
+    public boolean equals(Futbolista f){
+        return this==f;
+    }
+
+    @Override
+    public String toString() {
+        return "El futbolista " + nombre + " tiene " + edad + ", y juega de " + posicion ;
+    }
+
+    // Getters y Setters
 
     public String getNombre() {
         return nombre;
@@ -41,21 +53,4 @@ public abstract class Futbolista implements Comparable{
     public String getPosicion() {
         return posicion;
     }
-
-    public void setPosicion(String posicion) {
-        this.posicion = posicion;
-    }
-
-    // Métodos
-
-    @Override
-    public String toString() {
-        return "El futbolista " + nombre + " tiene " + edad + ", y juega de " + posicion ;
-    }
-
-    public boolean equals(Futbolista f){
-        return this==f;
-    }
-
-    public abstract boolean jugarConLasManos();
 }
